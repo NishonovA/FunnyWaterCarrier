@@ -27,13 +27,14 @@ namespace FunnyWaterCarrier
             }
         }
 
-        public void CreateEmployee(string surname, string name, string patronymic)
+        public void CreateEmployee(string surname, string name, string patronymic, DateTime date)
         {
             CreateEmployee(new Employee()
             {
                 Surname = surname,
                 Name = name,
-                Patronymic = patronymic
+                Patronymic = patronymic,
+                Birthday = date
             });
         }
 
@@ -45,6 +46,7 @@ namespace FunnyWaterCarrier
                 dbContext.SaveChanges();
             }
         }
+
         public void CreateOrder(int number, string product)
         {
             CreateOrder(new Order()
@@ -62,10 +64,6 @@ namespace FunnyWaterCarrier
                 dbContext.SaveChanges();
             }
         }
-
-
-
-
 
         public IEnumerable<Subdivision> GetDivisions()
         {

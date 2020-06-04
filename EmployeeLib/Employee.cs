@@ -20,6 +20,6 @@ namespace EmployeeLib
         public string Patronymic { get; set; }  //Отчество
         public DateTime Birthday { get; set; }  //Дата рождения
         public Genders Gender { get; set; } //Пол
-        public int Division { get; set; }   //Подразделение
+        public Subdivision Division { get; set; }   //Подразделение
     }
 }

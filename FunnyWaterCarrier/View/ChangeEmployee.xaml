@@ -15,7 +15,7 @@
 
             <Button Command="{Binding Accept}" Content="Принять" HorizontalAlignment="Left" Height="20" Margin="320,180,0,0" VerticalAlignment="Top" Width="60"/>
             <Button Command="{Binding Decline}" Content="Отмена" HorizontalAlignment="Left" Height="20" Margin="400,180,0,0" VerticalAlignment="Top" Width="60"/>
-            <DatePicker x:Name="DatePicker_CEmp" HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" VerticalAlignment="Top" Width="200"/>
+            <DatePicker x:Name="DatePicker_CEmp" DisplayDate="2019-01-01" HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Height="25" Margin="20,125,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Width="100"/>
             <ComboBox x:Name="ComboBox_CEmpDiv" HorizontalAlignment="Left" Height="20" Margin="150,155,0,0" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,155,0,0" TextWrapping="Wrap" Text="Подразделение" VerticalAlignment="Top" Width="100"/>

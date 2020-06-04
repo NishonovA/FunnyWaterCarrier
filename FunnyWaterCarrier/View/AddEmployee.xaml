@@ -11,18 +11,14 @@
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,50,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="100"/>
             <TextBox Text="{Binding EmployeeName}" HorizontalAlignment="Left" Height="20" Margin="150,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,80,0,0" TextWrapping="Wrap" Text="Отчество" VerticalAlignment="Top" Width="100"/>
-            <TextBox Text="{Binding EmployeePetronymic}" HorizontalAlignment="Left" Height="20" Margin="150,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+            <TextBox Text="{Binding EmployeePatronymic}" HorizontalAlignment="Left" Height="20" Margin="150,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
 
             <Button Command="{Binding Accept}" Content="Принять" HorizontalAlignment="Left" Height="20" Margin="320,180,0,0" VerticalAlignment="Top" Width="60"/>
             <Button Command="{Binding Decline}" Content="Отмена" HorizontalAlignment="Left" Height="20" Margin="400,180,0,0" VerticalAlignment="Top" Width="60"/>
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="355,20,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Width="20"/>
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="355,50,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Width="20"/>
-            <DatePicker HorizontalAlignment="Left" Height="25" Margin="150,110,0,0" VerticalAlignment="Top" Width="200"/>
+            <DatePicker SelectedDate="{Binding EmployeeDate}" SelectedDateFormat="Short" HorizontalAlignment="Left" Height="25" Margin="150,110,0,0" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Height="25" Margin="20,110,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Width="100"/>
             <ComboBox HorizontalAlignment="Left" Height="20" Margin="150,140,0,0" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,140,0,0" TextWrapping="Wrap" Text="Подразделение" VerticalAlignment="Top" Width="100"/>
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="355,110,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Width="20"/>
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="355,140,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Width="20"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,170,0,0" TextWrapping="Wrap" Text="Пол" VerticalAlignment="Top" Width="100"/>
             <ComboBox HorizontalAlignment="Left" Height="20" Margin="150,170,0,0" VerticalAlignment="Top" Width="110"/>
 

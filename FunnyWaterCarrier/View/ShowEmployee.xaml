@@ -12,7 +12,7 @@
                     <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия" Width="90"/>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="80"/>
                     <DataGridTextColumn Binding="{Binding Patronymic}" Header="Отчество" Width="100"/>
-                    <DataGridTextColumn Binding="{Binding Birthday}" Header="Дата рожд." Width="80"/>
+                    <DataGridTextColumn Binding="{Binding Birthday, StringFormat=\{0:dd.MM.yy\}}" Header="Дата рожд." Width="80"/>
                     <DataGridTextColumn Binding="{Binding Gender}" Header="Пол" Width="70"/>
                     <DataGridTextColumn Binding="{Binding Division}" Header="Подразделение" Width="100"/>
                 </DataGrid.Columns>

@@ -16,6 +16,7 @@ namespace FunnyWaterCarrier.ViewModel
         private string _employeeSurname;
         private string _employeeName;
         private string _employeePatronymic;
+        private DateTime _employeeDate;
 
         public string EmployeeSurname
         {
@@ -45,11 +46,21 @@ namespace FunnyWaterCarrier.ViewModel
             }
         }
 
+        public DateTime EmployeeDate
+        {
+            get => _employeeDate;
+            set
+            {
+                _employeeDate = value;
+                OnPropertyChanged("EmployeeDate");
+            }
+        }
+
         public ICommand Accept
         {
             get => new BaseCommand((sender) =>
             {
-                ServiceClient.CreateEmployee(EmployeeSurname, EmployeeName, EmployeePatronymic);
+                ServiceClient.CreateEmployee(EmployeeSurname, EmployeeName, EmployeePatronymic, EmployeeDate);
                 Back();
             });
         }
