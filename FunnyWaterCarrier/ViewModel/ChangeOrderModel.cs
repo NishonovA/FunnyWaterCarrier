@@ -8,5 +8,8 @@ namespace FunnyWaterCarrier.ViewModel
 {
     class ChangeOrderModel : BaseViewModel
     {
+        public ChangeOrderModel(ServiceClient client, BaseViewModel parent = null) : base(client, parent)
+        {
+        }
     }
 }

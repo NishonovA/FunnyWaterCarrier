@@ -18,7 +18,7 @@ namespace FunnyWaterCarrier.View
     /// <summary>
     /// Логика взаимодействия для ChangeDivision.xaml
     /// </summary>
-    public partial class ChangeDivision : Page
+    public partial class ChangeDivision : UserControl
     {
         public ChangeDivision()
         {

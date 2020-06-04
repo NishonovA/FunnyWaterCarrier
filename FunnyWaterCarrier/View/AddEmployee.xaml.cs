@@ -18,7 +18,7 @@ namespace FunnyWaterCarrier.View
     /// <summary>
     /// Логика взаимодействия для AddEmployee.xaml
     /// </summary>
-    public partial class AddEmployee : Page
+    public partial class AddEmployee : UserControl
     {
         public AddEmployee()
         {

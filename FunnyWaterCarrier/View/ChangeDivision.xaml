@@ -1,17 +1,17 @@
-﻿<Page x:Class="FunnyWaterCarrier.View.ChangeDivision"
+﻿<UserControl x:Class="FunnyWaterCarrier.View.ChangeDivision"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FunnyWaterCarrier.View">
     <GroupBox Header="Изменение подразделения" Height="250" Width="500">
-        <Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,40,0,0" TextWrapping="Wrap" Text="Наименование" VerticalAlignment="Top" Width="100"/>
             <ComboBox x:Name="ComboBox_CDiv" HorizontalAlignment="Left" Height="20" Margin="150,40,0,0" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,80,0,0" TextWrapping="Wrap" Text="Новое имя" VerticalAlignment="Top" Width="100"/>
             <TextBox x:Name="textBox_CDiv"  HorizontalAlignment="Left" Height="20" Margin="150,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-            <Button x:Name="Button_CDivY" Content="Принять" HorizontalAlignment="Left" Height="20" Margin="320,180,0,0" VerticalAlignment="Top" Width="60"/>
-            <Button x:Name="Button_CDivN" Content="Отмена" HorizontalAlignment="Left" Height="20" Margin="400,180,0,0" VerticalAlignment="Top" Width="60"/>
+            <Button Command="{Binding Accept}" Content="Принять" HorizontalAlignment="Left" Height="20" Margin="320,180,0,0" VerticalAlignment="Top" Width="60"/>
+            <Button Command="{Binding Decline}" Content="Отмена" HorizontalAlignment="Left" Height="20" Margin="400,180,0,0" VerticalAlignment="Top" Width="60"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,120,0,0" TextWrapping="Wrap" Text="Руководитель" VerticalAlignment="Top" Width="100"/>
             <ComboBox x:Name="ComboBox_CDivLead" HorizontalAlignment="Left" Height="20" Margin="150,120,0,0" VerticalAlignment="Top" Width="200"/>
 
@@ -19,4 +19,4 @@
 
         </Grid>
     </GroupBox>
-</Page>
+</UserControl>

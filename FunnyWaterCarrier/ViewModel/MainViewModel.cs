@@ -7,13 +7,17 @@ using System.Windows.Input;
 
 namespace FunnyWaterCarrier.ViewModel
 {
-    class MainViewModel : BaseViewModel
+    public class MainViewModel : BaseViewModel
     {
+        public MainViewModel(ServiceClient client, BaseViewModel parent = null) : base(client, parent)
+        {
+        }
+
         public ICommand AddDivision
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new AddDivisionModel());
+                OnShowView(this, new AddDivisionModel(ServiceClient, this));
             });
         }
 
@@ -21,7 +25,7 @@ namespace FunnyWaterCarrier.ViewModel
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new AddEmployeeModel());
+                OnShowView(this, new AddEmployeeModel(ServiceClient, this));
             });
         }
 
@@ -29,7 +33,7 @@ namespace FunnyWaterCarrier.ViewModel
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new AddOrderModel());
+                OnShowView(this, new AddOrderModel(ServiceClient, this));
             });
         }
 
@@ -37,42 +41,42 @@ namespace FunnyWaterCarrier.ViewModel
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new ChangeDivisionModel());
+                OnShowView(this, new ChangeDivisionModel(ServiceClient, this));
             });
         }
         public ICommand ChangeEmployee
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new ChangeEmployeeModel());
+                OnShowView(this, new ChangeEmployeeModel(ServiceClient, this));
             });
         }
         public ICommand ChangeOrder
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new ChangeOrderModel());
+                OnShowView(this, new ChangeOrderModel(ServiceClient, this));
             });
         }
         public ICommand ShowDivision
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new ShowDivisionModel());
+                OnShowView(this, new ShowDivisionModel(ServiceClient, this));
             });
         }
         public ICommand ShowEmployee
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new ShowEmployeeModel());
+                OnShowView(this, new ShowEmployeeModel(ServiceClient, this));
             });
         }
         public ICommand ShowOrder
         {
             get => new BaseCommand((object obj) =>
             {
-                OnShowView(this, new ShowOrderModel());
+                OnShowView(this, new ShowOrderModel(ServiceClient, this));
             });
         }
     }

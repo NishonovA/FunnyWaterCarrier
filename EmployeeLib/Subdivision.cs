@@ -10,6 +10,6 @@ namespace EmployeeLib
     {
         public int Id { get; set; } //Ключ
         public string Title { get; set; }   //Наименование
-        public Employee Leader { get; set; }    //Руководитель
+        public int? Leader { get; set; }    //Руководитель
     }
 }

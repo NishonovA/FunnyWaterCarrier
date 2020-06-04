@@ -1,25 +1,25 @@
-﻿<Window x:Class="FunnyWaterCarrier.MainWindow"
+﻿<UserControl x:Class="FunnyWaterCarrier.View.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FunnyWaterCarrier.View" Height="270" Width="500">
     <GroupBox Header="Менеджер" Height="250" Width="500">
-        <Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,20,0,0" Text="Добро пожаловать в приложение. Выберите действие:" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"/>
-            <Button x:Name="Button11" Command="{Binding AddDivision}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,60,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button21" Command="{Binding AddEmployee}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,110,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button31" Command="{Binding AddOrder}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,160,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button12" Command="{Binding ChangeDivision}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,60,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button22" Command="{Binding ChangeEmployee}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,110,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button32" Command="{Binding ChangeOrder}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,160,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button13" Command="{Binding ShowDivision}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,60,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button23" Command="{Binding ShowEmployee}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,110,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="Button33" Command="{Binding ShowOrder}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,160,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding AddDivision}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,60,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding AddEmployee}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,110,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding AddOrder}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,160,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding ChangeDivision}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,60,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding ChangeEmployee}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,110,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding ChangeOrder}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,160,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding ShowDivision}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,60,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding ShowEmployee}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,110,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding ShowOrder}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,160,0,0" VerticalAlignment="Top" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="380,65,0,0" Text="Подразделение" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="380,115,0,0" Text="Сотрудника" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="380,165,0,0" Text="Заказ" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
 
         </Grid>
     </GroupBox>
-</Window>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FunnyWaterCarrier.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,12 @@ using System.Windows.Shapes;
 
 namespace FunnyWaterCarrier
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() 
         {
             InitializeComponent();
+            this.DataContext = new ContentPresenterViewModel();
         }
     }
 }

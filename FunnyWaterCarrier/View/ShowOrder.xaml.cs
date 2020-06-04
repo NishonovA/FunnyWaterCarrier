@@ -18,7 +18,7 @@ namespace FunnyWaterCarrier.View
     /// <summary>
     /// Логика взаимодействия для ShowOrder.xaml
     /// </summary>
-    public partial class ShowOrder : Page
+    public partial class ShowOrder : UserControl
     {
         public ShowOrder()
         {

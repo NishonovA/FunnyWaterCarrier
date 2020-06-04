@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FunnyWaterCarrier"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="270" Width="500" MinHeight ="270" MinWidth="500">
+        Title="{Binding Title}" Height="300" Width="700" MinHeight ="300" MinWidth="700">
     <ContentPresenter x:Name="ContentPresenter" Content="{Binding ViewModel}" Width="Auto" Height="Auto"/>
 </Window>

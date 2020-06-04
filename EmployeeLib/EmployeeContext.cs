@@ -13,6 +13,8 @@ namespace EmployeeLib.Model
             : base("DbConnection")
         { }
 
-        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Subdivision> Subdivisions { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

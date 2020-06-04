@@ -18,7 +18,7 @@ namespace FunnyWaterCarrier.View
     /// <summary>
     /// Логика взаимодействия для ShowDivision.xaml
     /// </summary>
-    public partial class ShowDivision : Page
+    public partial class ShowDivision : UserControl
     {
         public ShowDivision()
         {

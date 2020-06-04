@@ -18,7 +18,7 @@ namespace FunnyWaterCarrier.View
     /// <summary>
     /// Логика взаимодействия для AddOrder.xaml
     /// </summary>
-    public partial class AddOrder : Page
+    public partial class AddOrder : UserControl
     {
         public AddOrder()
         {

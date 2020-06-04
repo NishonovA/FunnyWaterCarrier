@@ -8,5 +8,9 @@ namespace FunnyWaterCarrier.ViewModel
 {
     class ChangeDivisionModel : BaseViewModel
     {
+        public ChangeDivisionModel(ServiceClient client, BaseViewModel parent) : base(client, parent)
+        {
+
+        }
     }
 }

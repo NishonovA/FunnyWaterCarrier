@@ -8,7 +8,7 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            <!--<DataTemplate DataType="{x:Type viewmodel:AddDivisionModel}">
+            <DataTemplate DataType="{x:Type viewmodel:AddDivisionModel}">
                 <view:AddDivision HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </DataTemplate>
 
@@ -42,7 +42,7 @@
 
             <DataTemplate DataType="{x:Type viewmodel:ShowOrderModel}">
                 <view:ShowOrder HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </DataTemplate>-->
+            </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewmodel:MainViewModel}">
                 <view:MainView HorizontalAlignment="Center" VerticalAlignment="Center"/>

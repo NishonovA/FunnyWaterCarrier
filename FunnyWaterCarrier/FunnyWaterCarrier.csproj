@@ -65,6 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ServiceClient.cs" />
     <Compile Include="ViewModel\AddDivisionModel.cs" />
     <Compile Include="ViewModel\AddEmployeeModel.cs" />
     <Compile Include="ViewModel\AddOrderModel.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="ViewModel\ChangeDivisionModel.cs" />
     <Compile Include="ViewModel\ChangeEmployeeModel.cs" />
     <Compile Include="ViewModel\ChangeOrderModel.cs" />
+    <Compile Include="ViewModel\ContentPresenterViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ShowDivisionModel.cs" />
     <Compile Include="ViewModel\ShowEmployeeModel.cs" />
