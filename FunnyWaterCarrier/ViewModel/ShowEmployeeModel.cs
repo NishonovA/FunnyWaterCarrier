@@ -27,21 +27,6 @@ namespace FunnyWaterCarrier.ViewModel
             }
         }
 
-        private Dictionary<Genders, string> _genders = new Dictionary<Genders, string>()
-        {
-            {Genders.Male, "Мужской"},
-            {Genders.Female, "Женский" }
-        };
-        public Dictionary<Genders, string> GendersDictionary
-        {
-            get => _genders;
-            set
-            {
-                _genders = value;
-                OnPropertyChanged("GendersDictionary");
-            }
-        }
-
         public Employee Input
         {
             get => _inputEmployee;

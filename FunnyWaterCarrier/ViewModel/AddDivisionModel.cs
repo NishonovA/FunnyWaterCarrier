@@ -68,15 +68,24 @@ namespace FunnyWaterCarrier.ViewModel
             {
                 if (_inputDivision == null)
                 {
-                    ServiceClient.CreateSubdivision(DivisionName, DivisionLeader);
+                    if (DivisionName == null) MessageBox.Show("Не задано название подразделения");
+                    else
+                    {
+                        ServiceClient.CreateSubdivision(DivisionName, DivisionLeader);
+                        Back();
+                    }
                 }
                 else
                 {
-                    _inputDivision.Title = DivisionName;
-                    _inputDivision.Leader = DivisionLeader;
-                    ServiceClient.ChangeSubdivision(_inputDivision);
+                    if (DivisionName == null) MessageBox.Show("Не задано название подразделения");
+                    else
+                    {
+                        _inputDivision.Title = DivisionName;
+                        _inputDivision.Leader = DivisionLeader;
+                        ServiceClient.ChangeSubdivision(_inputDivision);
+                        Back();
+                    }
                 }
-                Back();
             });
         }
 

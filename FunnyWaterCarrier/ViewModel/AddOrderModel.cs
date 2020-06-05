@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace FunnyWaterCarrier.ViewModel
@@ -78,16 +79,39 @@ namespace FunnyWaterCarrier.ViewModel
             {
                 if (_inputOrder == null)
                 {
-                    ServiceClient.CreateOrder(OrderNumber, OrderProduct, OrderWorker);
+                    if ((OrderNumber == 0)||(OrderProduct == null)||(OrderWorker == null))
+                    {
+                        StringBuilder errormess = new StringBuilder();
+                        if (OrderNumber == 0) errormess.Append("Не задан номер заказа!\n");
+                        if (OrderProduct == null) errormess.Append("Не задано название товара!\n");
+                        if (OrderWorker == null) errormess.Append("Не задан сотрудник!\n");
+                        MessageBox.Show(Convert.ToString(errormess));
+                    }
+                    else
+                    {
+                        ServiceClient.CreateOrder(OrderNumber, OrderProduct, OrderWorker);
+                        Back();
+                    }
                 }
                 else
                 {
-                    _inputOrder.Number = OrderNumber;
-                    _inputOrder.Product = OrderProduct;
-                    _inputOrder.Worker = OrderWorker;
-                    ServiceClient.ChangeOrder(_inputOrder);
+                    if ((OrderNumber == 0) || (OrderProduct == null) || (OrderWorker == null))
+                    {
+                        StringBuilder errormess = new StringBuilder();
+                        if (OrderNumber == 0) errormess.Append("Не задан номер заказа!\n");
+                        if (OrderProduct == null) errormess.Append("Не задано название товара!\n");
+                        if (OrderWorker == null) errormess.Append("Не задан сотрудник!\n");
+                        MessageBox.Show(Convert.ToString(errormess));
+                    }
+                    else
+                    {
+                        _inputOrder.Number = OrderNumber;
+                        _inputOrder.Product = OrderProduct;
+                        _inputOrder.Worker = OrderWorker;
+                        ServiceClient.ChangeOrder(_inputOrder);
+                        Back();
+                    }
                 }
-                Back();
             });
         }
 

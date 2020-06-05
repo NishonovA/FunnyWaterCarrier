@@ -131,25 +131,53 @@ namespace FunnyWaterCarrier.ViewModel
             {
                 if (_inputEmloyee == null)
                 {
-                    ServiceClient.CreateEmployee(EmployeeSurname, EmployeeName, EmployeePatronymic, EmployeeDate, SelectedGender, EmployeeSubdivision);
-                    Back();
-                }
-                else
-                {
-                    if (_inputEmloyee.Division.Leader.Id != _inputEmloyee.Id)
+                    if ((EmployeeSurname == null) || (EmployeeName == null) || (EmployeePatronymic == null) ||
+                    (EmployeeDate.Year < (DateTime.Now.Year - 100)) || (EmployeeDate.Year > DateTime.Now.Year) || (EmployeeSubdivision == null))
                     {
-                        _inputEmloyee.Surname = EmployeeSurname;
-                        _inputEmloyee.Name = EmployeeName;
-                        _inputEmloyee.Patronymic = EmployeePatronymic;
-                        _inputEmloyee.Birthday = EmployeeDate;
-                        _inputEmloyee.Gender = SelectedGender;
-                        _inputEmloyee.Division = EmployeeSubdivision;
-                        ServiceClient.ChangeEmployee(_inputEmloyee);
-                        Back();
+                        StringBuilder errormess = new StringBuilder();
+                        if (EmployeeSurname == null) errormess.Append("Не задана фамилия!\n");
+                        if (EmployeeName == null) errormess.Append("Не задано имя!\n");
+                        if (EmployeePatronymic == null) errormess.Append("Не задано отчество!\n");
+                        if ((EmployeeDate.Year < (DateTime.Now.Year - 100)) || (EmployeeDate.Year > DateTime.Now.Year)) errormess.Append("Некорректная дата!\n");
+                        if (EmployeeSubdivision == null) errormess.Append("Не задано подразделение!\n");
+                        MessageBox.Show(Convert.ToString(errormess));
                     }
                     else
                     {
-                        MessageBox.Show($"Сотрудник является руководителем.\nСменители руководителя \"{_inputEmloyee.Division.Title}\"");
+                        ServiceClient.CreateEmployee(EmployeeSurname, EmployeeName, EmployeePatronymic, EmployeeDate, SelectedGender, EmployeeSubdivision);
+                        Back();
+                    }
+                }
+                else
+                {
+                    if ((EmployeeSurname == null) || (EmployeeName == null) || (EmployeePatronymic == null)||
+                    (EmployeeDate.Year < (DateTime.Now.Year - 100)) ||(EmployeeDate.Year > DateTime.Now.Year) ||(EmployeeSubdivision == null))
+                    {
+                        StringBuilder errormess = new StringBuilder();
+                        if (EmployeeSurname == null) errormess.Append("Не задана фамилия!\n");
+                        if (EmployeeName == null) errormess.Append("Не задано имя!\n");
+                        if (EmployeePatronymic == null) errormess.Append("Не задано отчество!\n");
+                        if ((EmployeeDate.Year < (DateTime.Now.Year - 100)) || (EmployeeDate.Year > DateTime.Now.Year)) errormess.Append("Некорректная дата!\n");
+                        if (EmployeeSubdivision == null) errormess.Append("Не задано подразделение!\n");
+                        MessageBox.Show(Convert.ToString(errormess));
+                    }
+                    else
+                    {
+                        if (_inputEmloyee.Division.Leader.Id != _inputEmloyee.Id)
+                        {
+                            _inputEmloyee.Surname = EmployeeSurname;
+                            _inputEmloyee.Name = EmployeeName;
+                            _inputEmloyee.Patronymic = EmployeePatronymic;
+                            _inputEmloyee.Birthday = EmployeeDate;
+                            _inputEmloyee.Gender = SelectedGender;
+                            _inputEmloyee.Division = EmployeeSubdivision;
+                            ServiceClient.ChangeEmployee(_inputEmloyee);
+                            Back();
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Сотрудник является руководителем.\nСмените руководителя \"{_inputEmloyee.Division.Title}\"");
+                        }
                     }
                 }
             });
