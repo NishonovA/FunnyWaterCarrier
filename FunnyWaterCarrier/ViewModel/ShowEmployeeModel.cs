@@ -10,9 +10,10 @@ namespace FunnyWaterCarrier.ViewModel
 {
     class ShowEmployeeModel : BaseViewModel
     {
+        private Employee _inputEmployee;
         public ShowEmployeeModel(ServiceClient client, BaseViewModel parent = null) : base(client, parent)
         {
-            this.Employees = client.GetEmployees().ToList();
+            this.Employees = client.GetEmployees();
         }
 
         private List<Employee> _employees;
@@ -24,6 +25,39 @@ namespace FunnyWaterCarrier.ViewModel
                 _employees = value;
                 OnPropertyChanged("Employees");
             }
+        }
+
+        private Dictionary<Genders, string> _genders = new Dictionary<Genders, string>()
+        {
+            {Genders.Male, "Мужской"},
+            {Genders.Female, "Женский" }
+        };
+        public Dictionary<Genders, string> GendersDictionary
+        {
+            get => _genders;
+            set
+            {
+                _genders = value;
+                OnPropertyChanged("GendersDictionary");
+            }
+        }
+
+        public Employee Input
+        {
+            get => _inputEmployee;
+            set
+            {
+                _inputEmployee = value;
+                OnPropertyChanged("Input");
+            }
+        }
+
+        public ICommand Change
+        {
+            get => new BaseCommand((object obj) =>
+            {
+                OnShowView(this, new AddEmployeeModel(ServiceClient, Parent, _inputEmployee));
+            });
         }
 
         public ICommand Accept

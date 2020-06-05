@@ -10,12 +10,9 @@
             <Button Command="{Binding AddDivision}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,60,0,0" VerticalAlignment="Top" Width="100"/>
             <Button Command="{Binding AddEmployee}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,110,0,0" VerticalAlignment="Top" Width="100"/>
             <Button Command="{Binding AddOrder}" Content="Создать" HorizontalAlignment="Left" Height="30" Margin="20,160,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Command="{Binding ChangeDivision}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,60,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Command="{Binding ChangeEmployee}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,110,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Command="{Binding ChangeOrder}" Content="Изменить" HorizontalAlignment="Left" Height="30" Margin="140,160,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Command="{Binding ShowDivision}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,60,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Command="{Binding ShowEmployee}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,110,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button Command="{Binding ShowOrder}" Content="Показать" HorizontalAlignment="Left" Height="30" Margin="260,160,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Command="{Binding ShowDivision}" Content="Показать/Изменить" HorizontalAlignment="Left" Height="30" Margin="160,60,0,0" VerticalAlignment="Top" Width="200"/>
+            <Button Command="{Binding ShowEmployee}" Content="Показать/Изменить" HorizontalAlignment="Left" Height="30" Margin="160,110,0,0" VerticalAlignment="Top" Width="200"/>
+            <Button Command="{Binding ShowOrder}" Content="Показать/Изменить" HorizontalAlignment="Left" Height="30" Margin="160,160,0,0" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="380,65,0,0" Text="Подразделение" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="380,115,0,0" Text="Сотрудника" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="380,165,0,0" Text="Заказ" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>

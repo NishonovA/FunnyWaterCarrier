@@ -10,9 +10,10 @@ namespace FunnyWaterCarrier.ViewModel
 {
     class ShowOrderModel : BaseViewModel
     {
+        private Order _inputOrder;
         public ShowOrderModel(ServiceClient client, BaseViewModel parent = null) : base(client, parent)
         {
-            this.Orders = client.GetOrders().ToList();
+            this.Orders = client.GetOrders();
         }
 
         private List<Order> _orders;
@@ -25,6 +26,24 @@ namespace FunnyWaterCarrier.ViewModel
                 OnPropertyChanged("Orders");
             }
         }
+        public Order Input
+        {
+            get => _inputOrder;
+            set
+            {
+                _inputOrder = value;
+                OnPropertyChanged("Input");
+            }
+        }
+
+        public ICommand Change
+        {
+            get => new BaseCommand((object obj) =>
+            {
+                OnShowView(this, new AddOrderModel(ServiceClient, Parent, _inputOrder));
+            });
+        }
+
         public ICommand Accept
         {
             get => new BaseCommand((sender) =>

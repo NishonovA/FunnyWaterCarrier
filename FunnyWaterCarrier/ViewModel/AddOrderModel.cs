@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,38 @@ namespace FunnyWaterCarrier.ViewModel
 {
     class AddOrderModel : BaseViewModel
     {
-        public AddOrderModel(ServiceClient client, BaseViewModel parent = null) : base(client, parent)
+        private Order _inputOrder;
+        public AddOrderModel(ServiceClient client, BaseViewModel parent = null, Order input = null) : base(client, parent)
         {
+            this.Employees = client.GetEmployees();
+            if (input != null)
+            {
+                _inputOrder = input;
+                this.OrderNumber = _inputOrder.Number;
+                this.OrderProduct = _inputOrder.Product;
+                this.OrderWorker = _inputOrder.Worker;
+            }
         }
 
         private int _orderNumber;
         private string _orderProduct;
+        private Employee _orderWorker;
+
+        private List<Employee> _employees;
+
+        public List<Employee> Employees
+        {
+            get
+            {
+                if (_employees == null) _employees = ServiceClient.GetEmployees();
+                return _employees;
+            }
+            set
+            {
+                _employees = value;
+                OnPropertyChanged("Employees");
+            }
+        }
 
         public int OrderNumber
         {
@@ -35,11 +62,31 @@ namespace FunnyWaterCarrier.ViewModel
             }
         }
 
+        public Employee OrderWorker
+        {
+            get => _orderWorker;
+            set
+            {
+                _orderWorker = value;
+                OnPropertyChanged("OrderWorker");
+            }
+        }
+
         public ICommand Accept
         {
             get => new BaseCommand((sender) =>
             {
-                ServiceClient.CreateOrder(OrderNumber, OrderProduct);
+                if (_inputOrder == null)
+                {
+                    ServiceClient.CreateOrder(OrderNumber, OrderProduct, OrderWorker);
+                }
+                else
+                {
+                    _inputOrder.Number = OrderNumber;
+                    _inputOrder.Product = OrderProduct;
+                    _inputOrder.Worker = OrderWorker;
+                    ServiceClient.ChangeOrder(_inputOrder);
+                }
                 Back();
             });
         }

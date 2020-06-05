@@ -7,16 +7,22 @@
     <GroupBox Header="Показать сотрудников" Height="250" Width="660">
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
             <Button Command="{Binding Accept}" Content="Принять" HorizontalAlignment="Left" Height="20" Margin="560,180,0,0" VerticalAlignment="Top" Width="60"/>
-            <DataGrid ItemsSource="{Binding Employees}" AutoGenerateColumns="False" x:Name="employeeGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Width="520" Height="180">
+            <DataGrid 
+                ItemsSource="{Binding Employees}" 
+                SelectionMode="Single" AutoGenerateColumns="False"
+                SelectedItem="{Binding Input}"
+                
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Width="520" Height="180">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия" Width="90"/>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="80"/>
                     <DataGridTextColumn Binding="{Binding Patronymic}" Header="Отчество" Width="100"/>
-                    <DataGridTextColumn Binding="{Binding Birthday, StringFormat=\{0:dd.MM.yy\}}" Header="Дата рожд." Width="80"/>
+                    <DataGridTextColumn Binding="{Binding Birthday, StringFormat=\{0:dd.MM.yyyy\}}" Header="Дата рожд." Width="80"/>
                     <DataGridTextColumn Binding="{Binding Gender}" Header="Пол" Width="70"/>
-                    <DataGridTextColumn Binding="{Binding Division}" Header="Подразделение" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding Path = Division.Title}" Header="Подразделение" Width="100"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Command="{Binding Change}" Content="Изменить" HorizontalAlignment="Left" Height="20" Margin="560,140,0,0" VerticalAlignment="Top" Width="60"/>
         </Grid>
     </GroupBox>
 </UserControl>

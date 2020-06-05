@@ -16,5 +16,21 @@ namespace EmployeeLib.Model
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Subdivision> Subdivisions { get; set; }
         public DbSet<Order> Orders { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Subdivision>()
+                .HasMany(d => d.Employees)
+                .WithRequired(us => us.Division);
+
+            modelBuilder.Entity<Subdivision>()
+                .HasOptional(d => d.Leader);
+
+            modelBuilder.Entity<Employee>()
+                .HasMany(e => e.Orders)
+                .WithRequired(o => o.Worker);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

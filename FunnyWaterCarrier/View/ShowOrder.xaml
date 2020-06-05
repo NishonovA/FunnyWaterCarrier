@@ -7,13 +7,16 @@
     <GroupBox Header="Показать заказы" Height="250" Width="660">
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
             <Button Command="{Binding Accept}" Content="Принять" HorizontalAlignment="Left" Height="20" Margin="560,180,0,0" VerticalAlignment="Top" Width="60"/>
-            <DataGrid ItemsSource="{Binding Orders}" AutoGenerateColumns="False" x:Name="employeeGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Width="520" Height="180">
+            <DataGrid ItemsSource="{Binding Orders}"
+                      SelectionMode="Single" SelectedItem="{Binding Input}"
+                      AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Width="520" Height="180">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Number}" Header="Номер" Width="170"/>
                     <DataGridTextColumn Binding="{Binding Product}" Header="Товар" Width="180"/>
-                    <DataGridTextColumn Binding="{Binding Worker}" Header="Сотрудник" Width="170"/>
+                    <DataGridTextColumn Binding="{Binding Path = Worker.Surname}" Header="Сотрудник" Width="170"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Command="{Binding Change}" Content="Изменить" HorizontalAlignment="Left" Height="20" Margin="560,140,0,0" VerticalAlignment="Top" Width="60"/>
         </Grid>
     </GroupBox>
 </UserControl>

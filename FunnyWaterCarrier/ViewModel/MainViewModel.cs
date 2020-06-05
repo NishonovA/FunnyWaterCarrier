@@ -37,27 +37,6 @@ namespace FunnyWaterCarrier.ViewModel
             });
         }
 
-        public ICommand ChangeDivision
-        {
-            get => new BaseCommand((object obj) =>
-            {
-                OnShowView(this, new ChangeDivisionModel(ServiceClient, this));
-            });
-        }
-        public ICommand ChangeEmployee
-        {
-            get => new BaseCommand((object obj) =>
-            {
-                OnShowView(this, new ChangeEmployeeModel(ServiceClient, this));
-            });
-        }
-        public ICommand ChangeOrder
-        {
-            get => new BaseCommand((object obj) =>
-            {
-                OnShowView(this, new ChangeOrderModel(ServiceClient, this));
-            });
-        }
         public ICommand ShowDivision
         {
             get => new BaseCommand((object obj) =>

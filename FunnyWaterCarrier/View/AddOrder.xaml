@@ -13,7 +13,18 @@
 
             <Button Command="{Binding Accept}" Content="Принять" HorizontalAlignment="Left" Height="20" Margin="320,180,0,0" VerticalAlignment="Top" Width="60"/>
             <Button Command="{Binding Decline}" Content="Отмена" HorizontalAlignment="Left" Height="20" Margin="400,180,0,0" VerticalAlignment="Top" Width="60"/>
-            <ComboBox  HorizontalAlignment="Left" Height="20" Margin="150,100,0,0" VerticalAlignment="Top" Width="200"/>
+            <ComboBox 
+                SelectedValue="{Binding OrderWorker}" 
+                ItemsSource="{Binding Employees}" 
+                HorizontalAlignment="Left" Height="20" Margin="150,100,0,0" VerticalAlignment="Top" Width="200">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding Surname}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+            </ComboBox>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="20,100,0,0" TextWrapping="Wrap" Text="Сотрудник" VerticalAlignment="Top" Width="100"/>
             
 

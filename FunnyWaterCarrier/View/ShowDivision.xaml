@@ -7,12 +7,15 @@
     <GroupBox Header="Показать подразделения" Height="250" Width="660">
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
             <Button Command="{Binding Accept}"  Content="Принять" HorizontalAlignment="Left" Height="20" Margin="560,180,0,0" VerticalAlignment="Top" Width="60"/>
-            <DataGrid ItemsSource="{Binding Subdivisions}" AutoGenerateColumns="False" x:Name="divisionGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Width="520" Height="180">
+            <DataGrid SelectedItem="{Binding Input}" ItemsSource="{Binding Subdivisions}" 
+                      SelectionMode="Single"
+                      AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Width="520" Height="180">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Title}" Header="Подразделение" Width="260"/>
-                    <DataGridTextColumn Binding="{Binding Leader}" Header="Руководитель" Width="260"/>
+                    <DataGridTextColumn Binding="{Binding Path = Leader.Surname}" Header="Руководитель" Width="260"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Command="{Binding Change}" Content="Изменить" HorizontalAlignment="Left" Height="20" Margin="560,140,0,0" VerticalAlignment="Top" Width="60"/>
         </Grid>
     </GroupBox>
 </UserControl>

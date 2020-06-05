@@ -70,9 +70,6 @@
     <Compile Include="ViewModel\AddEmployeeModel.cs" />
     <Compile Include="ViewModel\AddOrderModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\ChangeDivisionModel.cs" />
-    <Compile Include="ViewModel\ChangeEmployeeModel.cs" />
-    <Compile Include="ViewModel\ChangeOrderModel.cs" />
     <Compile Include="ViewModel\ContentPresenterViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ShowDivisionModel.cs" />
@@ -86,15 +83,6 @@
     </Compile>
     <Compile Include="View\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChangeDivision.xaml.cs">
-      <DependentUpon>ChangeDivision.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChangeEmployee.xaml.cs">
-      <DependentUpon>ChangeEmployee.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChangeOrder.xaml.cs">
-      <DependentUpon>ChangeOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -130,18 +118,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AddOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ChangeDivision.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ChangeEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ChangeOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

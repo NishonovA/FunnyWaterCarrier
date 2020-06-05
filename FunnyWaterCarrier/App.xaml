@@ -20,18 +20,6 @@
                 <view:AddOrder HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewmodel:ChangeDivisionModel}">
-                <view:ChangeDivision HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewmodel:ChangeEmployeeModel}">
-                <view:ChangeEmployee HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewmodel:ChangeOrderModel}">
-                <view:ChangeOrder HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </DataTemplate>
-
             <DataTemplate DataType="{x:Type viewmodel:ShowDivisionModel}">
                 <view:ShowDivision HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </DataTemplate>
