@@ -15,7 +15,8 @@
             <Button Command="{Binding Decline}" Content="Отмена" HorizontalAlignment="Left" Height="20" Margin="400,180,0,0" VerticalAlignment="Top" Width="60"/>
             <ComboBox 
                 SelectedValue="{Binding OrderWorker}" 
-                ItemsSource="{Binding Employees}" 
+                ItemsSource="{Binding Employees}"
+                IsSynchronizedWithCurrentItem="True"
                 HorizontalAlignment="Left" Height="20" Margin="150,100,0,0" VerticalAlignment="Top" Width="200">
             <ComboBox.ItemTemplate>
                 <DataTemplate>

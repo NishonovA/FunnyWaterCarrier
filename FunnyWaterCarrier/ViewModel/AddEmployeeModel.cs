@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace FunnyWaterCarrier.ViewModel
@@ -14,7 +15,7 @@ namespace FunnyWaterCarrier.ViewModel
         public AddEmployeeModel(ServiceClient client, BaseViewModel parent = null, Employee employee = null) : base(client, parent)
         {
             this.Subdivisions = client.GetDivisions();
-            this.EmployeeDate = new DateTime(1994, 08, 05);
+            this.EmployeeDate = new DateTime(1994, 05, 20);
 
             if (employee != null)
             {
@@ -131,18 +132,26 @@ namespace FunnyWaterCarrier.ViewModel
                 if (_inputEmloyee == null)
                 {
                     ServiceClient.CreateEmployee(EmployeeSurname, EmployeeName, EmployeePatronymic, EmployeeDate, SelectedGender, EmployeeSubdivision);
+                    Back();
                 }
                 else
                 {
-                    _inputEmloyee.Surname = EmployeeSurname;
-                    _inputEmloyee.Name = EmployeeName;
-                    _inputEmloyee.Patronymic = EmployeePatronymic;
-                    _inputEmloyee.Birthday = EmployeeDate;
-                    _inputEmloyee.Gender = SelectedGender;
-                    _inputEmloyee.Division = EmployeeSubdivision;
-                    ServiceClient.ChangeEmployee(_inputEmloyee);
+                    if (_inputEmloyee.Division.Leader.Id != _inputEmloyee.Id)
+                    {
+                        _inputEmloyee.Surname = EmployeeSurname;
+                        _inputEmloyee.Name = EmployeeName;
+                        _inputEmloyee.Patronymic = EmployeePatronymic;
+                        _inputEmloyee.Birthday = EmployeeDate;
+                        _inputEmloyee.Gender = SelectedGender;
+                        _inputEmloyee.Division = EmployeeSubdivision;
+                        ServiceClient.ChangeEmployee(_inputEmloyee);
+                        Back();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Сотрудник является руководителем.\nСменители руководителя \"{_inputEmloyee.Division.Title}\"");
+                    }
                 }
-                Back();
             });
         }
 

@@ -19,6 +19,7 @@
             <TextBlock HorizontalAlignment="Left" Height="25" Margin="20,110,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Width="100"/>
             <ComboBox ItemsSource="{Binding Subdivisions}" 
                       SelectedValue="{Binding EmployeeSubdivision}"
+                      IsSynchronizedWithCurrentItem="True"
                       HorizontalAlignment="Left" Height="20" Margin="150,140,0,0" VerticalAlignment="Top" Width="200">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

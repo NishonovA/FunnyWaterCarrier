@@ -84,10 +84,9 @@ namespace FunnyWaterCarrier
         {
             using (var dbContext = new EmployeeContext())
             {
-                Subdivision changing = dbContext.Subdivisions.Find(division.Id);
-                changing.Title = division.Title;
-                changing.Leader = division.Leader;
-                dbContext.Entry(changing).State = EntityState.Modified;
+                var newDivision = dbContext.Subdivisions.Find(division.Id);
+                newDivision.Title = division.Title;
+                newDivision.Leader = dbContext.Employees.Find(division.Leader.Id);
                 dbContext.SaveChanges();
             }
         }
@@ -96,14 +95,13 @@ namespace FunnyWaterCarrier
         {
             using (var dbContext = new EmployeeContext())
             {
-                Employee changing = dbContext.Employees.Find(employee.Id);
-                dbContext.Employees.Attach(changing);
-                changing.Surname = employee.Surname;
-                changing.Name = employee.Name;
-                changing.Patronymic = employee.Patronymic;
-                changing.Birthday = employee.Birthday;
-                changing.Gender = employee.Gender;
-                changing.Division = employee.Division;
+                Employee newEmployee = dbContext.Employees.Find(employee.Id);
+                newEmployee.Surname = employee.Surname;
+                newEmployee.Name = employee.Name;
+                newEmployee.Patronymic = employee.Patronymic;
+                newEmployee.Birthday = employee.Birthday;
+                newEmployee.Gender = employee.Gender;
+                newEmployee.Division = dbContext.Subdivisions.Find(employee.Division.Id);
                 dbContext.SaveChanges();
             }
         }
@@ -112,11 +110,10 @@ namespace FunnyWaterCarrier
         {
             using (var dbContext = new EmployeeContext())
             {
-                Order changing = dbContext.Orders.Find(order.Id);
-                changing.Number = order.Number;
-                changing.Product = order.Product;
-                changing.Worker = order.Worker;
-                dbContext.Entry(changing).State = EntityState.Modified;
+                Order newOrder = dbContext.Orders.Find(order.Id);
+                newOrder.Number = order.Number;
+                newOrder.Product = order.Product;
+                newOrder.Worker = dbContext.Employees.Find(order.Worker.Id);
                 dbContext.SaveChanges();
             }
         }
